@@ -1,4 +1,4 @@
 build/
 PSTAGE**/
 public/
-stage*
+/stages.*

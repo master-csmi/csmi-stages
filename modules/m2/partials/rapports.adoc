@@ -5,7 +5,7 @@
 
  - [[[Bernard]]] Bernard Pierre, _Accompagner TotalEnergies dans l’exploration des données, la mise en place d’algorithmes et le suivi des modèles pour différents cas d’usages._, link:https://www.totalenergies.fr/[TotalEnergies], link:{attachmentsdir}/++Bernard-Pierre.pdf++[Bernard-Pierre.pdf],  link:{attachmentsdir}/++Bernard-Pierre-slides.pdf++[Bernard-Pierre-slides.pdf] 
 
- - [[[ElHoussaini]]] El Houssaini Youness, _Control of the goldak heat source parameters_x000d_
+ - [[[ElHoussaini]]] El Houssaini Youness, _Control of the goldak heat source parameters
 based on experimental welding data using finite element analysis._, link:https://www.iwm.fraunhofer.de/en/contact.html[Fraunhofer Institute For Mechanics Of Materials], link:{attachmentsdir}/++El Houssaini-Youness.pdf++[El Houssaini-Youness.pdf],  link:{attachmentsdir}/++El Houssaini-Youness-slides.pdf++[El Houssaini-Youness-slides.pdf] 
 
  - [[[Graff]]] Graff Jonathan, _Algèbres géométriques pour la robotique en coq_, link:https://www.unistra.fr[Universite De Strasbourg], link:{attachmentsdir}/++Graff-Jonathan.pdf++[Graff-Jonathan.pdf],  link:{attachmentsdir}/++Graff-Jonathan-slides.pdf++[Graff-Jonathan-slides.pdf] 
@@ -16,7 +16,7 @@ based on experimental welding data using finite element analysis._, link:https:/
 
  - [[[Ouachour]]] Ouachour Hanane, _apport des méthodes d’apprentissage profond pour la reconnaissance des actes des énoncés oraux - université d'orléans - projet rtr diams (19022lif)_, link:https://www.univ-orleans.fr/fr/polytech[Universite D'Orleans - Laboratoire Prisme - Polytech' Orleans], link:{attachmentsdir}/++Ouachour-Hanane.pdf++[Ouachour-Hanane.pdf],  link:{attachmentsdir}/++Ouachour-Hanane-slides.pdf++[Ouachour-Hanane-slides.pdf] 
 
- - [[[Pinçon]]] Pinçon Philippe, _Mise à jour de factorisations de cholesky creuses dans le contexte de la simulation chirurgicale_x000d_
+ - [[[Pinçon]]] Pinçon Philippe, _Mise à jour de factorisations de cholesky creuses dans le contexte de la simulation chirurgicale
 interactive._, link:https://www.insimo.com/fr/[Insimo], link:{attachmentsdir}/++Pinçon-Philippe.pdf++[Pinçon-Philippe.pdf],  link:{attachmentsdir}/++Pinçon-Philippe-slides.pdf++[Pinçon-Philippe-slides.pdf] 
 
  - [[[Pinçon]]] Pinçon Philippe, _Mise à jour de factorisations de cholesky creuses dans le contexte de la simulation chirurgicale interactive._, link:https://www.inria.fr/fr/centre-inria-nancy-grand-est[Inria Nancy Grand Est], link:{attachmentsdir}/++Pinçon-Philippe.pdf++[Pinçon-Philippe.pdf],  link:{attachmentsdir}/++Pinçon-Philippe-slides.pdf++[Pinçon-Philippe-slides.pdf] 
