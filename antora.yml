@@ -1,6 +1,6 @@
 name: csmi-stages-{year}
 title: Master CSMI {year}
-version: master
+version: ~
 start_page: ROOT:index.adoc
 asciidoc: 
   attributes: 
