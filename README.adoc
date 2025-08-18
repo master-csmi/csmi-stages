@@ -1,7 +1,7 @@
 :feelpp: Feel++
 = Master CSMI
 
-image:https://github.com/master-csmi/csmi/workflows/CI/badge.svg[CI]
+image:https://github.com/master-csmi/csmi-stages/workflows/CI/badge.svg[CI]
 
 == Generating the document 
 
