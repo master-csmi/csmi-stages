@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-antora --html-url-extension-style=indexify site.yml
+if [[ -n "${URL:-}" ]]; then
+    npm run build -- --html-url-extension-style=indexify --url "$URL"
+else
+    npm run build -- --html-url-extension-style=indexify
+fi

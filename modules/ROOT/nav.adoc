@@ -1,1 +1,2 @@
 * xref:index.adoc[Master CSMI {year}]
+** xref:instructions.adoc[Instructions de dépôt]

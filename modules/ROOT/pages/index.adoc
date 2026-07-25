@@ -1,79 +1,17 @@
-:stem: latexmath
-:experimental: true
-:imagesprefix:
-ifdef::env-github,env-browser,env-vscode[:imagesprefix:]
-:repo: csmi-stages-{year}
-:stages-uri: https://github.com/master-csmi/{repo}
-:pr-uri: https://github.com/master-csmi/{repo}/compare
-:pdf-rep: modules/{master}/attachments
-= Master CSMI
-:page-toclevels: 3
+= Stages du Master CSMI {year}
 
-[blockMacroTemplate,par,'year,master']
-----
-* Cloner le dépôt GitHub correspondant :
+Ce site regroupe les informations publiques, les rapports et les présentations
+de stage des étudiants du Master CSMI.
 
-[source,shell]
---
-git clone {stages-uri}
-cd {repo}
---
+== Promotions
 
-* Créer une nouvelle branche nommée `{master}-<votre nom>` :
+* xref:m1:index.adoc[Stages et documents des M1]
+* xref:m2:index.adoc[Stages et documents des M2]
 
-[source,shell]
---
-git checkout -b `{master}-<votre nom>`
---
+== Déposer un document
 
-* Ajouter votre rapport au format PDF dans le répertoire `modules/{master}/attachments/Nom-Prenom.pdf`.
-* Ajouter votre présentation au format PDF dans le répertoire `modules/{master}/attachments/Nom-Prenom-slides.pdf`.
-* Vérifier que les liens vers votre rapport et votre présentation sur la page https://master-csmi.github.io/csmi-stages-{year}/csmi-stages-{year}/{master}/index.html sont corrects.
-* Éditer le fichier `modules/{master}/partials/rapports.adoc` si nécessaire pour corriger la référence à votre travail.
-* Commiter vos modifications et pousser votre branche sur GitHub :
+Les étudiants doivent suivre la procédure décrite dans la page
+xref:instructions.adoc[Instructions de dépôt].
 
-[source,shell]
---
-# Visualiser vos modifications
-git status
-# Commiter toutes les modifications
-git commit -a -m"Ajout du rapport Nom Prénom"
---
-
-* Créer une Pull Request sur {pr-uri} en sélectionnant votre branche.
-
-NOTE: Le PDF de la présentation peut être déposé la veille au soir de la soutenance.
-
-* Une fois la Pull Request créée, vérifier que votre modification génère correctement le site via Netlify. Netlify modifie le PR et rajoute des informations sur un déploiement de test et vous permets de verifier vos modifications.  Cliquer sur `Deploy preview` pour voir le site généré et vérifier que votre rapport et votre présentation sont bien accessibles.
-
-.Deploy preview Netlify: netlify a généré le site de test pour votre PR. Vous pouvez le consulter en cliquant sur le lien `Deploy preview` dans votre PR.
-image::netlify-deploy-preview.png[]
-----
-
-Cette page regroupe les rapports de stage pour l'année 2024 des Master 1 et 2 CSMI.
-
-== Le travail de stage
-
-Votre travail de stage doit comprendre les éléments suivants :
-
-* [x] Un rapport de stage au format PDF ou sous forme de site Antora.
-* [x] Une présentation au format PDF.
-
-Les documents doivent être déposés sur le site de l'année correspondante.
-
-=== Comment déposer un PDF
-
-==== Master 1
-
-par::[2024,m1]
-
-==== Master 2
-
-par::[2024,m2]
-
-=== Comment déposer un rapport Antora
-
-Pour déposer un rapport sous forme de site Antora, suivez les mêmes étapes que pour le rapport PDF, à l'exception de l'étape où vous devez déposer votre rapport PDF. 
-À la place, ajoutez le lien vers le site Antora de votre rapport dans `modules/{master}/partials/rapports.adoc`.
-
-NOTE: Votre présentation pour la soutenance devra être au format PDF.
+IMPORTANT: Les documents confidentiels, les fichiers de notes et les exports de
+scolarité ne doivent jamais être déposés dans ce dépôt public.

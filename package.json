@@ -1,17 +1,17 @@
 {
   "private": true,
-  "name": "csmi-stages",
-  "description": "Stages Master CSMI",
-  "version": "0.1.0",
+  "name": "csmi-stages-site",
+  "description": "Site annuel des stages du Master CSMI",
+  "version": "1.0.0",
   "license": "AGPL-3.0",
   "author": "Christophe Prud'homme",
-  "homepage": "https://www.github.com/master-csmi/csmi-stages#readme",
+  "homepage": "https://github.com/master-csmi/csmi-stages#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://www.github.com/master-csmi/csmi-stages.git"
+    "url": "git+https://github.com/master-csmi/csmi-stages.git"
   },
   "bugs": {
-    "url": "https://www.github.com/master-csmi/csmi-stages/issues"
+    "url": "https://github.com/master-csmi/csmi-stages/issues"
   },
   "contributors": [
     {
@@ -19,31 +19,37 @@
       "email": "christophe.prudhomme@cemosis.fr"
     }
   ],
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
-    "prose": "write-good --parse **/*.adoc",
-    "start": "http-server public/ -d -i",
-    "antora": "antora --stacktrace generate --cache-dir cache/antora --clean site.yml",
-    "validate": "antora --stacktrace generate --cache-dir cache --generator ./generator/xref-validator.js --clean site.yml",
-    "linkcheck": "broken-link-checker --filter-level 3 --recursive --verbose"
+    "init:year": "node scripts/init-year.mjs",
+    "configure": "node scripts/generate-site-config.mjs",
+    "config:check": "node scripts/generate-site-config.mjs --check",
+    "generate": "node scripts/generate-content.mjs",
+    "validate": "node scripts/validate.mjs",
+    "validate:changes": "node scripts/validate-changes.mjs",
+    "build": "npm run config:check && npm run generate && npm run validate && antora --stacktrace generate --log-failure-level warn --cache-dir cache/antora --clean site.yml",
+    "antora": "npm run build",
+    "serve": "node scripts/serve.mjs",
+    "dev": "npm run build && npm run serve",
+    "check": "npm run build"
   },
   "dependencies": {
-    "@antora/cli": "^3.1",
-    "@antora/collector-extension": "^1.0.0-alpha.7",
-    "@antora/site-generator-default": "^3.1",
-    "@asciidoctor/core": "^2.2.8",
-    "asciidoctor": "^2.2.8",
-    "asciidoctor-jupyter": "^0.7.0",
-    "asciidoctor-kroki": "^0.18.1",
-    "handlebars": "^4.7.7",
-    "handlebars-utils": "^1.0.6",
-    "@djencks/asciidoctor-template": "^0.0.3",
-    "@feelpp/asciidoctor-extensions": "^1.0.0-rc.11",
-    "asciidoctor-emoji": "^0.4.2"
+    "handlebars-utils": "1.0.6",
+    "yaml": "2.9.0"
   },
   "devDependencies": {
-    "broken-link-checker": "^0.7.8",
-    "http-server": "^14.1.1",
-    "write-good": "^0.13.1"
+    "@antora/cli": "3.1.15",
+    "@antora/site-generator": "3.1.15"
+  },
+  "overrides": {
+    "async": "2.6.4",
+    "follow-redirects": "1.16.0",
+    "handlebars": "4.7.9",
+    "js-yaml": "4.3.0",
+    "lodash": "4.18.1",
+    "sha.js": "2.4.12"
   },
   "keywords": [
     "antora",

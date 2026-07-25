@@ -1,29 +1,72 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  docs:
-    if: "!contains(github.event.head_commit.message, 'doc skip')"
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    concurrency:
+      group: docs-build-${{ github.ref }}
+      cancel-in-progress: true
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-    - name: Install 
-      run: npm install
-    - name: Install credentials
-      run: echo https://$GITHUB_OAUTH:@github.com > $HOME/.git-credentials
-      env:
-        GITHUB_OAUTH: ${{ secrets.CR_PAT }}
-    - name: Build
-      run: npm run antora
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
- 
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate student Pull Request scope
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: npm run validate:changes
+
+      - name: Validate and build
+        run: npm run check
+
+      - name: Store the generated site
+        if: ${{ github.event_name == 'push' && github.repository != 'master-csmi/csmi-stages' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: public-site
+          path: public
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    if: ${{ github.event_name == 'push' && github.repository != 'master-csmi/csmi-stages' }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: pages-deployment
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: public-site
+          path: public
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: public

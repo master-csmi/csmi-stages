@@ -1,0 +1,17 @@
+# Ce fichier ne doit contenir que des informations destinées à être publiques.
+# Ne jamais y ajouter de numéro étudiant, de note, d'adresse ou d'adresse e-mail.
+#
+# Exemple :
+# students:
+#   - level: m1
+#     last_name: Dupont
+#     first_name: Camille
+#     company: Entreprise
+#     company_url: https://example.org
+#     subject: Sujet du stage
+#     report_visibility: public
+#     slides_visibility: public
+#
+# Les champs company, company_url et subject peuvent rester vides au démarrage.
+# Les valeurs possibles pour les visibilités sont "public" et "confidential".
+students: []

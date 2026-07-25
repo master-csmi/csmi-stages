@@ -1,0 +1,56 @@
+= Instructions de dépôt
+
+Cette procédure concerne uniquement les rapports et présentations dont la
+publication a été autorisée.
+
+== Avant de commencer
+
+* Vérifiez sur la page de votre promotion le nom de fichier attendu.
+* Exportez votre rapport et votre présentation au format PDF.
+* Vérifiez que chaque PDF est inférieur à {max-pdf-size-mib} Mio.
+* Ne déposez jamais de document confidentiel, de note, de numéro étudiant ou de
+  fichier Excel.
+
+== Créer une branche
+
+[source,shell,subs=attributes+]
+----
+git clone {stages-uri}.git
+cd {repo}
+git switch -c m1-nom-prenom
+----
+
+Remplacez `m1` par `m2` selon votre promotion, et utilisez un nom de branche
+sans espace ni accent.
+
+== Ajouter les PDF
+
+Placez les fichiers dans `modules/m1/attachments/` ou
+`modules/m2/attachments/`, exactement avec les noms indiqués sur le site.
+
+[source,shell]
+----
+git status
+git add modules/m1/attachments/Nom-Prenom.pdf
+git add modules/m1/attachments/Nom-Prenom-slides.pdf
+git commit -m "Ajout du rapport et des slides de Nom Prénom"
+git push -u origin HEAD
+----
+
+Il est possible de déposer la présentation dans une seconde Pull Request si
+elle n'est pas encore prête.
+
+== Créer et vérifier la Pull Request
+
+Ouvrez {pr-uri}[la page de comparaison GitHub], sélectionnez votre branche et
+créez une Pull Request vers `main`.
+
+La CI contrôle automatiquement :
+
+* le nom, le type et la taille des PDF ;
+* l'absence de fichier privé ;
+* la génération du site et tous ses liens internes.
+
+Si Netlify est activé, consultez également le lien `Deploy preview` ajouté à la
+Pull Request. Un responsable CSMI vérifiera ensuite les documents avant la
+fusion.

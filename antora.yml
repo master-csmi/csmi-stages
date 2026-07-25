@@ -1,11 +1,15 @@
-name: csmi-stages-{year}
-title: Master CSMI {year}
+# Généré par npm run configure depuis config/site.json. Ne pas modifier directement.
+name: "csmi-stages"
+title: "Master CSMI YYYY"
 version: ~
 start_page: ROOT:index.adoc
-asciidoc: 
-  attributes: 
-    hide-uri-scheme: '' 
-    year: {year}
+asciidoc:
+  attributes:
+    year: "YYYY"
+    repo: "csmi-stages"
+    stages-uri: "https://github.com/master-csmi/csmi-stages"
+    pr-uri: "https://github.com/master-csmi/csmi-stages/compare"
+    max-pdf-size-mib: "20"
 nav:
 - modules/ROOT/nav.adoc
 - modules/m1/nav.adoc

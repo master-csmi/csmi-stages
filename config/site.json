@@ -1,0 +1,8 @@
+{
+  "year": "YYYY",
+  "organization": "master-csmi",
+  "repository": "csmi-stages",
+  "siteUrl": "https://master-csmi.github.io/csmi-stages",
+  "uiBundleUrl": "https://github.com/feelpp/antora-ui/releases/download/v0.45-rc.2/ui-bundle.zip",
+  "maxPdfSizeMiB": 20
+}

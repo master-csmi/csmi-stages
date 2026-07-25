@@ -1,6 +1,17 @@
 build/
 PSTAGE**/
 public/
-/stages.*
+cache/
+.DS_Store
 .venv/
 node_modules/
+
+# Les exports de scolarité et de conventions restent strictement privés.
+private/
+stages*
+*.csv
+*.tsv
+*.ods
+*.xls
+*.xlsx
+*.xltx

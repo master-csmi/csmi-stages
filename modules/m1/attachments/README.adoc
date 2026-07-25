@@ -1,4 +1,8 @@
 = Rapports et Slides PDF
 
-Ce repertoire contient les rapports et les slides PDF au format `Nom-Prenom.pdf`
+Ce répertoire contient uniquement les documents PDF publics des M1.
 
+Les noms attendus sont générés depuis `data/students.yml` :
+
+* `Nom-Prenom.pdf` pour le rapport ;
+* `Nom-Prenom-slides.pdf` pour la présentation.
